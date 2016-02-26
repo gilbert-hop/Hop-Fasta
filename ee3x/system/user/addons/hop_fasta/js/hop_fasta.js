@@ -44,7 +44,7 @@ $(document).ready(function(){
 					$('#fasta_update').html($('#fasta_update').data('submit-text'));
 					$('#fasta_update').removeAttr('disabled');
 					$('#fasta_update').removeClass('work');
-					$('#fasta_status').html('OK').show().delay(800).fadeOut();
+					$('#fasta_status').html(' OK').show().delay(800).fadeOut();
 				},
 				error: function(response){
 					// console.log('fail');
