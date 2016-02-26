@@ -9,6 +9,8 @@ Saving with “Quick Update” will create a template revision (if you want it t
 
 If you want to use it, [please buy it](https://devot-ee.com/add-ons/hop-404-reporter). :)
 
+[More information, how to use...](ee3x/system/user/addons/hop_fasta/README.md)
+
 Want more ?
 ===========
 Take a look at our [ExpressionEngine Add-Ons](http://www.hopstudios.com/software)
