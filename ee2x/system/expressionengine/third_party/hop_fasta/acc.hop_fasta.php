@@ -37,11 +37,10 @@ class hop_fasta_acc
 	*/
 	function set_sections()
 	{
-		$EE =& get_instance();
 
-		$group_id = $EE->input->get_post('tgpref');
+		$group_id = ee()->input->get_post('tgpref');
 		
-		$session_id = $EE->session->userdata('fingerprint');
+		$session_id = ee()->session->userdata('fingerprint');
 
 		$js =  <<<EOD
 <script type="text/javascript">
@@ -84,7 +83,7 @@ EOD;
 
 		// if group_id doesn't exist, or if the URL contains update_template OR edit_template
 		if(!$group_id || (strlen(strstr($_SERVER['REQUEST_URI'],'update_template'))<0) || (strlen(strstr($_SERVER['REQUEST_URI'],'edit_template'))<0)){
-			$EE->cp->add_to_head($js);
+			ee()->cp->add_to_head($js);
 		}
 
 
