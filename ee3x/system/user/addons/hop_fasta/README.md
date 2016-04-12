@@ -6,6 +6,12 @@ If you use the "Quick Update" button, it submits the form in the background, so 
 
 Saving with "Quick Update" will create a template revision (if you want it to), and keeps you from having to wait for the whole HTML page to download, so you work faster, better, and easier.
 
+
+## Support
+
+Having issues ? Found a bug ? Suggestions ? Contact us at [tech@hopstudios.com](mailto:tech@hopstudios.com)
+
+
 ## Changelog 
 
 ### 2.2 
