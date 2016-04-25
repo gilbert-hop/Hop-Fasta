@@ -57,7 +57,7 @@ class Hop_fasta_ext
 	function add_fasta_button()
 	{
 		// Load our JS code
-		$js = file_get_contents(PATH_THIRD."hop_fasta/js/hop_fasta.js");
+		$js = file_get_contents(PATH_THIRD."hop_fasta/js/hop_fasta.min.js");
 		
 		echo $js;
 	}

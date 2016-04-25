@@ -4,6 +4,12 @@ $(document).ready(function(){
 	{
 		// Setting up form for Template edit page
 		$(".wrap form[action*='design/template/edit']").addClass('fasta');
+		
+		// Setting up form for Template variables
+		// $(".wrap form[action*='design/variables/edit']").addClass('fasta');
+
+		// Setting up form for Template Partials
+		// $(".wrap form[action*='design/snippets/edit']").addClass('fasta');
 
 		// Setting up form for Entry edit
 		// $(".wrap form[action*='/cp/publish/edit/entry/']").addClass('fasta');
@@ -30,6 +36,9 @@ $(document).ready(function(){
 			});
 			// console.log(paramObj);
 			
+			// By default, we send our query as json
+			var data_type = 'json';
+			
 			// Get correct template data
 			if (window.location.href.indexOf('design/template') > -1)
 			{
@@ -41,6 +50,30 @@ $(document).ready(function(){
 				// We replace the default template data field by our fixed template data
 				paramObj.template_data = temp_data;
 			}
+			
+			// Get correct Variable data
+			// if (window.location.href.indexOf('design/variables') > -1)
+			// {
+			// 	if (typeof $("form.fasta textarea[name='variable_data']").data("codemirror.editor") === "undefined" || $("form.fasta textarea[name='variable_data']").data("codemirror.editor") == false) {
+			// 		var temp_data = $("form.fasta textarea[name='variable_data']").val();
+			// 	} else {
+			// 		var temp_data = $("form.fasta textarea[name='variable_data']").data("codemirror.editor").getValue();
+			// 	}
+			// 	// We replace the default template data field by our fixed template data
+			// 	paramObj.variable_data = temp_data;
+			// }
+			
+			// Get correct Snippet data
+			// if (window.location.href.indexOf('design/snippets') > -1)
+			// {
+			// 	if (typeof $("form.fasta textarea[name='snippet_contents']").data("codemirror.editor") === "undefined" || $("form.fasta textarea[name='snippet_contents']").data("codemirror.editor") == false) {
+			// 		var temp_data = $("form.fasta textarea[name='snippet_contents']").val();
+			// 	} else {
+			// 		var temp_data = $("form.fasta textarea[name='snippet_contents']").data("codemirror.editor").getValue();
+			// 	}
+			// 	// We replace the default template data field by our fixed template data
+			// 	paramObj.snippet_contents = temp_data;
+			// }
 			
 			// Get correct data when editing entry
 			// if (window.location.href.indexOf('publish/edit/entry') > -1)
@@ -59,7 +92,7 @@ $(document).ready(function(){
 				type: "POST",
 				url: $("form.fasta").attr('action'),
 				data: paramObj,
-				dataType: 'json',
+				dataType: data_type,
 				success: function(response){
 					// console.log(response);
 					
