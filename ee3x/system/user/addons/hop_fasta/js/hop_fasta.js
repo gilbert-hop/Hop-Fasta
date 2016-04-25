@@ -1,23 +1,22 @@
 $(document).ready(function(){
-	if (window.location.href.indexOf('design/template') > -1)
+	// if (window.location.href.indexOf('design/template') > -1)
+	if(true)
 	{
+		// Setting up form for Template edit page
 		$(".wrap form[action*='design/template/edit']").addClass('fasta');
 
+		// Setting up form for Entry edit
+		// $(".wrap form[action*='/cp/publish/edit/entry/']").addClass('fasta');
+		
 		$("form.fasta .form-ctrls").prepend('<button id="fasta_update" class="btn" value="update" data-submit-text="Quick Update" data-work-text="Saving...">Quick Update</button><span id="fasta_status" style="display:none;"></span>');
 		
 		$("#fasta_update").click(function(){
 
+			var $button = $(this);
 			// Update button state
-			$('#fasta_update').attr('disabled', 'disabled');
-			$('#fasta_update').addClass('work');
-			$('#fasta_update').html($('#fasta_update').data('work-text'));
-			
-			// Get correct template data
-			if (typeof $("form.fasta textarea[name='template_data']").data("codemirror.editor") === "undefined" || $("form.fasta textarea[name='template_data']").data("codemirror.editor") == false) {
-				var temp_data = $("form.fasta textarea[name='template_data']").val();
-			} else {
-				var temp_data = $("form.fasta textarea[name='template_data']").data("codemirror.editor").getValue();
-			}
+			$button.attr('disabled', 'disabled');
+			$button.addClass('work');
+			$button.html($button.data('work-text'));
 			
 			// Setup all settings from the form
 			var paramObj = {};
@@ -30,8 +29,31 @@ $(document).ready(function(){
 				}
 			});
 			// console.log(paramObj);
-			// We replace the default template data field by our fixed template data
-			paramObj.template_data = temp_data;
+			
+			// Get correct template data
+			if (window.location.href.indexOf('design/template') > -1)
+			{
+				if (typeof $("form.fasta textarea[name='template_data']").data("codemirror.editor") === "undefined" || $("form.fasta textarea[name='template_data']").data("codemirror.editor") == false) {
+					var temp_data = $("form.fasta textarea[name='template_data']").val();
+				} else {
+					var temp_data = $("form.fasta textarea[name='template_data']").data("codemirror.editor").getValue();
+				}
+				// We replace the default template data field by our fixed template data
+				paramObj.template_data = temp_data;
+			}
+			
+			// Get correct data when editing entry
+			// if (window.location.href.indexOf('publish/edit/entry') > -1)
+			// {
+			// 	// This is internal EE, not sure what this is about
+			// 	paramObj.ee_fv_field = true;
+			// 	
+			// 	// Get correct data for every RTE fields
+			// 	$.each($("form.fasta textarea.has-rte"), function(idx, value) {
+			// 		paramObj[$(value).attr('name')] = $(value).prev().html();
+			// 	});
+			// }
+			
 
 			$.ajax({
 				type: "POST",
@@ -41,18 +63,18 @@ $(document).ready(function(){
 				success: function(response){
 					// console.log(response);
 					
-					$('#fasta_update').html($('#fasta_update').data('submit-text'));
-					$('#fasta_update').removeAttr('disabled');
-					$('#fasta_update').removeClass('work');
+					$button.html($button.data('submit-text'));
+					$button.removeAttr('disabled');
+					$button.removeClass('work');
 					$('#fasta_status').html(' OK').show().delay(800).fadeOut();
 				},
 				error: function(response){
 					// console.log('fail');
 					// console.log(response);
 					
-					$('#fasta_update').html($('#fasta_update').data('submit-text'));
-					$('#fasta_update').removeAttr('disabled');
-					$('#fasta_update').removeClass('work');
+					$button.html($button.data('submit-text'));
+					$button.removeAttr('disabled');
+					$button.removeClass('work');
 					$('#fasta_status').html('Failed').show().delay(1200).fadeOut();
 				}
 			});
