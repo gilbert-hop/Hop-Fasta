@@ -14,7 +14,7 @@
  */
 
 $config['name']='Hop Fasta';
-$config['version']='2.2.0';
+$config['version']='3.0.0';
 $config['nsm_addon_updater']['versions_xml']='http://www.hopstudios.com/software/versions/hop_fasta';
 
 // Version constant
