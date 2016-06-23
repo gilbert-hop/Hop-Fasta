@@ -14,6 +14,10 @@ Having issues ? Found a bug ? Suggestions ? Contact us at [tech@hopstudios.com](
 
 ## Changelog 
 
+### 3.0.0
+
+Upgraded for compatibility with EE 3
+
 ### 2.2 
 
 Upgraded for compatibility with EE 2.9

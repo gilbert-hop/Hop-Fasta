@@ -7,7 +7,7 @@ If you use the “Quick Update” button, it submits the form in the background,
 
 Saving with “Quick Update” will create a template revision (if you want it to), and keeps you from having to wait for the whole HTML page to download, so you work faster, better, and easier.
 
-If you want to use it, [please buy it](https://devot-ee.com/add-ons/hop-404-reporter). :)
+If you want to use it, [please buy it](https://devot-ee.com/add-ons/hop-fasta). :)
 
 [More information, how to use...](ee3x/system/user/addons/hop_fasta/README.md)
 

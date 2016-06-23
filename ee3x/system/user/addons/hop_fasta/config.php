@@ -1,16 +1,16 @@
 <?php
 
 /**
- * Hop 404 Reporter - Config
+ * Hop Fasta - Config
  *
  * NSM Addon Updater config file.
  *
- * @package		Hop Studios:Hop 404 Reporter
+ * @package		Hop Studios:Hop Fasta
  * @author		Hop Studios, Inc.
- * @copyright	Copyright (c) 2014, Hop Studios, Inc.
+ * @copyright	Copyright (c) 2016, Hop Studios, Inc.
  * @link		http://www.hopstudios.com/software/versions/hop_404_reporter
- * @version		0.1
- * @filesource	hop_404_reporter/config.php
+ * @version		3.0.0
+ * @filesource	hop_fasta/config.php
  */
 
 $config['name']='Hop Fasta';
