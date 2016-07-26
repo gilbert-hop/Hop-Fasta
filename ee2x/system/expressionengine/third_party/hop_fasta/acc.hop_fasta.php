@@ -42,6 +42,10 @@ class hop_fasta_acc
 		
 		$session_id = ee()->session->userdata('fingerprint');
 
+		// Create the CP url manually
+		$cp_url = ee()->config->item('cp_url');
+		$cp_url .= "?S=$session_id&D=cp&C=design&M=update_template&tgpref=$group_id";
+
 		$js =  <<<EOD
 <script type="text/javascript">
 $(document).ready(function(){
@@ -57,7 +61,7 @@ $(document).ready(function(){
 			var temp_data = $("#template_data").data("codemirror.editor").getValue();
 		}
 		$.post(
-			"index.php?S=$session_id&D=cp&C=design&M=update_template&tgpref=$group_id",
+			"$cp_url",
 			{
 				XID:$("form.fasta input[name='XID']").val(),
 				csrf_token:$("form.fasta input[name='csrf_token']").val(),
