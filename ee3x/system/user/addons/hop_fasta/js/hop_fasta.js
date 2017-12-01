@@ -1,6 +1,5 @@
 $(document).ready(function(){
-	// if (window.location.href.indexOf('design/template') > -1)
-	if(true)
+	if (window.location.href.indexOf('design/template') > -1)
 	{
 		// Setting up form for Template edit page
 		$(".wrap form[action*='design/template/edit']").addClass('fasta');
