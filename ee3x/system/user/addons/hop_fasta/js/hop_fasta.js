@@ -114,6 +114,14 @@ $(document).ready(function(){
 
 			return false;
 		});
+
+		// When the entire form submits, make the quick update button disabled
+		$("form.fasta").on('submit', function(e){
+			var $button = $('#fasta_update');
+			$button.attr('disabled', 'disabled');
+			$button.addClass('work');
+			$button.html($button.data('work-text'));
+		});
 	}
 
 });
