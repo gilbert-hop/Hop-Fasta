@@ -14,6 +14,10 @@ Having issues ? Found a bug ? Suggestions ? Contact us at [tech@hopstudios.com](
 
 ## Changelog 
 
+### 3.0.2
+
+* Fixing a bug to generate the script properly
+
 ### 3.0.1
 
 * Update for EE 4
