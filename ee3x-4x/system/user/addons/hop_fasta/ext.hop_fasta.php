@@ -58,7 +58,7 @@ class Hop_fasta_ext
 	{
 		// Load our JS code
 		$js = file_get_contents(PATH_THIRD."hop_fasta/js/hop_fasta.min.js");
-		
-		echo $js;
+
+		return $js;
 	}
 }

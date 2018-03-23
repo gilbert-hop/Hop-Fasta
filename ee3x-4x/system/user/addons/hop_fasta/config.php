@@ -9,12 +9,12 @@
  * @author		Hop Studios, Inc.
  * @copyright	Copyright (c) 2016, Hop Studios, Inc.
  * @link		http://www.hopstudios.com/software/versions/hop_404_reporter
- * @version		3.0.1
+ * @version		3.0.2
  * @filesource	hop_fasta/config.php
  */
 
 $config['name']='Hop Fasta';
-$config['version']='3.0.1';
+$config['version']='3.0.2';
 $config['nsm_addon_updater']['versions_xml']='http://www.hopstudios.com/software/versions/hop_fasta';
 
 // Version constant
