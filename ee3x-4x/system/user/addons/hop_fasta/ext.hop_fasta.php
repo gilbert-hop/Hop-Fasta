@@ -56,9 +56,16 @@ class Hop_fasta_ext
 	
 	function add_fasta_button()
 	{
-		// Load our JS code
-		$js = file_get_contents(PATH_THIRD."hop_fasta/js/hop_fasta.min.js");
+		$scripts = [];
 
-		return $js;
+		// If another extension shares the same hook
+		if (ee()->extensions->last_call !== false) {
+			$scripts[] = ee()->extensions->last_call;
+		}
+
+		// Load our JS code
+		$scripts[] = file_get_contents(PATH_THIRD."hop_fasta/js/hop_fasta.min.js");
+
+		return implode('', $scripts);
 	}
 }
